@@ -21,7 +21,7 @@ ido = Time()
 ido.nap = 0
 ido.ora = 0
 ido.perc = 0
-ido.masodperc = 0
+ido.masodperc = -1
 
 while ido.ora < 24:
     while ido.perc < 60:
