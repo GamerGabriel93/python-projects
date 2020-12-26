@@ -2,7 +2,7 @@ from time import sleep
 
 
 class Time:
-    """új időosztály"""
+    """New time class"""
 
     def kiir_ora(self):
         if ido.masodperc < 10:
