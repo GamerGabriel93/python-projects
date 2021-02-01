@@ -11,7 +11,7 @@ class Time:
             ido.perc = str(0) + str(ido.perc)
         if ido.ora < 10:
             ido.ora = str(0) + str(ido.ora)
-        print(str(ido.nap) + ". NAP" + " - " + str(self.ora) + ":" + str(self.perc) + ":" + str(self.masodperc))
+        print(str(ido.nap) + ". DAY" + " - " + str(self.ora) + ":" + str(self.perc) + ":" + str(self.masodperc))
         ido.masodperc = int(ido.masodperc)
         ido.perc = int(ido.perc)
         ido.ora = int(ido.ora)
