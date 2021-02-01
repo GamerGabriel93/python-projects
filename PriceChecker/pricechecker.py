@@ -14,7 +14,7 @@ option = Options()
 option.add_argument('--headless')
 option.add_argument('--disable-gpu')
 driver = webdriver.Chrome(options=option)
-print(urllib3)
+urllib3.disable_warnings()
 run = 1
 
 
@@ -30,6 +30,4 @@ def pri():
     process_kill()
 
 
-while run == 1:
-    sleep(5)
-    pri()
+pri()
