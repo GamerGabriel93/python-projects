@@ -18,12 +18,12 @@ class Enemy:
         return 'Enemy  Name:{}  Hp:{}   At:{}'.format(self.ename, int(self.ehp), self.eattack)
 
 
-def ingame():
+def print_data():
     print(player.pdata())
     print(eplayer.edata())
 
 
-player = Character('Kamen', 100, 20)
+player = Character('Karmen', 100, 20)
 eplayer = Enemy('Seal', 100, 18)
 
 print(player.pdata())
@@ -36,10 +36,10 @@ while eplayer.ehp > 0 and player.hp > 0:
         if eplayer.ehp <= 0:
             eplayer.ehp = 0
             print('Player WIN')
-        ingame()
+        print_data()
     if move == 2:
         player.hp = player.hp - eplayer.eattack / 2
         if player.hp <= 0:
             player.hp = 0
             print('Enemy WIN')
-        ingame()
+        print_data()
