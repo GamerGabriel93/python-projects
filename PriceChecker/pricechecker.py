@@ -15,7 +15,6 @@ option.add_argument('--headless')
 option.add_argument('--disable-gpu')
 driver = webdriver.Chrome(options=option)
 urllib3.disable_warnings()
-run = 1
 
 
 def pri():
