@@ -1,19 +1,24 @@
 from tkinter import *
 import ido
+import json
 
 
 class Arrive:
     def erkezes(self):
-        ido.Idopontok().erkezes()
         label = Label(root, text="Kezdési idő rögzítve!", fg="red")
         label.pack()
+        with open('workinghours.json', "a") as working:
+            json.dump(ido.Idopontok().erkezes(), working)
+            working.close()
 
 
 class Depart:
     def tavozas(self):
-        ido.Idopontok().erkezes()
         label = Label(root, text="Végzési idő rögzítve", fg="blue")
         label.pack()
+        with open('workinghours.json', "a") as working:
+            json.dump(ido.Idopontok().erkezes(), working)
+            working.close()
 
 
 root = Tk()

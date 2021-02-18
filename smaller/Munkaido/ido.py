@@ -6,7 +6,7 @@ class Schedule:
     def current_time(self):
         day = date.today()
         time = datetime.now()
-        return day.strftime("%Y.%m.%d"), time.strftime("%H:%M:%S")
+        return day.strftime("%Y.%m.%d"), time.strftime("%H:%M")
 
 
 class Idopontok:
