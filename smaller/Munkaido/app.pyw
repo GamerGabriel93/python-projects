@@ -8,7 +8,7 @@ class Arrive:
         label = Label(root, text="Kezdési idő rögzítve!", fg="red", font='Helvetica 8 bold')
         label.grid(row=3, column=0)
         with open('workinghours.json', "a") as working:
-            json.dump(ido.Idopontok().erkezes(), working)
+            json.dump((f"{worker.get()}", ido.Idopontok().erkezes()), working, ensure_ascii=False)
             working.close()
 
 
@@ -17,7 +17,7 @@ class Depart:
         label = Label(root, text="Végzési idő rögzítve", fg="red", font='Helvetica 8 bold')
         label.grid(row=3, column=3)
         with open('workinghours.json', "a") as working:
-            json.dump(ido.Idopontok().erkezes(), working)
+            json.dump((f"{worker.get()}", ido.Idopontok().erkezes()), working, ensure_ascii=False)
             working.close()
 
 
@@ -26,7 +26,7 @@ root.winfo_toplevel().title("Munkaidő nyilvántartó")
 label1 = Label(root, text='Munkaidő nyilvántartás', font='Helvetica 12 bold')
 erkButton = Button(root, text="Érkezés", width=15, height=3, command=Arrive().erkezes, font='Helvetica 10 bold', padx=20)
 tavButton = Button(root, text="Távozás", width=15, height=3, command=Depart().tavozas, font='Helvetica 10 bold', padx=20)
-worker = StringVar(root)
+worker = StringVar()
 w = OptionMenu(root, worker, "Győri Gábor", "Győri Evelin", "Győri Imre", "Győri Imréné")
 worker.set('Dolgozó kiválasztása')
 label1.grid(row=0, column=1)
