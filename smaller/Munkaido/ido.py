@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 class Schedule:
+    #értékek kinyerése a számítógépből
     def current_time(self):
         day = date.today()
         time = datetime.now()
