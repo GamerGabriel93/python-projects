@@ -8,16 +8,20 @@ class AddName:
         root.geometry("300x100")
         root.winfo_toplevel().title("Dolgozó hozzáadása")
 
-        namevar = StringVar()
-        nev = namevar.get()
-        nameentry = Entry(root, textvariable=nev)
-        button = Button(root, text="Rögzítés")
-
-        nameentry.place(relx=0.3, rely=0.2)
+        ent = Entry(root)
+        name = str(ent.get())
+        button = Button(root, text="Rögzítés", command=AddName().record)
         button.place(relx=0.4, rely=0.5)
+
+        ent.place(relx=0.3, rely=0.2)
         mainloop()
 
-    def recordname(self):
-        with open('dolgozok.txt', 'a') as save:
-            save.write(nev)
-            save.close()
+    def record(self):
+        print(name)
+        """with open('dolgozok.txt', 'a') as file:
+            file.write(str(self.name))
+            file.close()"""
+
+
+nev = AddName()
+nev.addname()
