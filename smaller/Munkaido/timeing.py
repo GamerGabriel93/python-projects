@@ -10,11 +10,11 @@ class Schedule:
         return day.strftime("%Y.%m.%d"), time.strftime("%H:%M")
 
 
-class Idopontok:
-    def erkezes(self):
-        arriving = Schedule()
-        return arriving.current_time()
+class Timerecord:
+    def arrival(self):
+        arrive = Schedule()
+        return arrive.current_time()
 
-    def tavozas(self):
-        tavoz = Schedule()
-        return tavoz.current_time()
+    def leaving(self):
+        leave = Schedule()
+        return leave.current_time()

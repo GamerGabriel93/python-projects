@@ -1,27 +1,25 @@
 from tkinter import *
+import json
 
 
 class AddName:
+    name = ""
+
     def addname(self):
-        root = Tk()
-        root.iconbitmap('logo.ico')
-        root.geometry("300x100")
-        root.winfo_toplevel().title("Dolgozó hozzáadása")
+        AddName.root = Tk()
+        AddName.root.iconbitmap('logo.ico')
+        AddName.root.geometry("300x100")
 
-        ent = Entry(root)
-        name = str(ent.get())
-        button = Button(root, text="Rögzítés", command=AddName().record)
-        button.place(relx=0.4, rely=0.5)
+        AddName.root.winfo_toplevel().title("Dolgozó hozzáadása")
+        AddName.ent = Entry(AddName.root)
+        AddName.button = Button(AddName.root, text="Rögzítés", command=AddName().record)
 
-        ent.place(relx=0.3, rely=0.2)
-        mainloop()
+        AddName.button.place(relx=0.4, rely=0.5)
+        AddName.ent.place(relx=0.3, rely=0.2)
+        AddName.root.mainloop()
 
     def record(self):
-        print(name)
-        """with open('dolgozok.txt', 'a') as file:
-            file.write(str(self.name))
-            file.close()"""
-
-
-nev = AddName()
-nev.addname()
+        name = AddName.ent.get()
+        with open('data\workers.json', 'a',  encoding='utf8') as file:
+            json.dumps(file)
+            file.close()
