@@ -1,1 +1,9 @@
-Jelenleg a program közösségi fejlesztés alatt áll, így a jogvédelem szempontjából Szabad Szoftvernek minősül. Vagyis bárki által módosítható, megtekinthető, használható.
+Elérhetőségek:
+Győri Gábor
+Programozó
+gabyka199311@gmail.com
++36/70-318-7133
+
+Jelenlegi verzió: 1.0.2021
+
+© 2021 Győri Gábor. Minden jog fenntartva.

@@ -45,6 +45,8 @@ class Depart:
 app = Tk()
 app.wm_iconbitmap('logo.ico')
 app.wm_title("Munkaidő nyilvántartó")
+app.after(1, lambda: app.focus_force())
+
 
 #elements
 label1 = Label(app, text='Munkaidő nyilvántartás', font='Helvetica 12 bold')
@@ -54,11 +56,17 @@ arriveButton = Button(app, text="Érkezés", width=15, height=2, command=Arrive(
 leaveButton = Button(app, text="Távozás", width=15, height=2, command=Depart().leaveSave, font='Helvetica 10 bold',
                      padx=10, pady=10)
 
+
 #menu
 mainmenu = Menu(app)
-submenu = Menu(app, tearoff=False)
-mainmenu.add_cascade(label="Dolgozó rögzítése", command=AddName().addname)
-mainmenu.add_command(label="Lekérdezések", command=Request().requestworker)
+submenu1 = Menu(app, tearoff=False)
+submenu1.add_command(label="Dolgozó rögzítése", command=AddName().addname)
+submenu1.add_command(label="Dolgozó törlése")
+mainmenu.add_cascade(label="Dolgozók karbantartása", menu=submenu1)
+submenu2 = Menu(app, tearoff=False)
+submenu2.add_command(label="Egyszerű lekérdezés", command=Request().requestworker)
+submenu2.add_command(label="Összetett lekérdezés")
+mainmenu.add_cascade(label="Lekérdezések", menu=submenu2)
 mainmenu.add_command(label="Névjegy", command=info.information)
 app.config(menu=mainmenu)
 
@@ -67,19 +75,6 @@ app.config(menu=mainmenu)
 worker = StringVar()
 w = OptionMenu(app, worker, "Győri Gábor", "Kiss Péter", "Győri Imre")
 worker.set('Dolgozó kiválasztása...')
-
-"""scrollbar = Scrollbar(app)
-listbox = Listbox(app, bg='white', yscrollcommand=scrollbar.set, width=50)
-scrollbar.config(command=listbox.yview)
-f = open('data\workers.json', 'r', encoding='UTF8')
-nevek = json.loads(f.read())
-f.close()
-nevek = nevek['names']
-for i in range(0, len(nevek)):
-    listbox.insert(END, str(nevek[i]['firstname']))
-listbox.grid(row=2, column=0, columnspan=3, pady=10)
-scrollbar.grid(row=2, column=2)
-value = str((listbox.get(ACTIVE)))"""
 
 
 # megjelenítés az ablakban

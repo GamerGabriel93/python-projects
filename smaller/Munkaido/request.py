@@ -7,6 +7,7 @@ class Request:
         Request.request.geometry("300x300")
         Request.request.wm_title('Lekérdezés')
         Request.request.wm_iconbitmap('logo.ico')
+        Request.request.after(1, lambda: Request.request.focus_force())
 
         Request.label = Label(Request.request, text="Dolgozó kiválasztása")
         Request.ent = Entry(Request.request)
