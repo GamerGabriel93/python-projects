@@ -1,13 +1,14 @@
-from datetime import date
 from datetime import datetime
 
 
 class Schedule:
     #értékek kinyerése a számítógépből
     def current_time(self):
-        day = date.today()
-        time = datetime.now()
-        return day.strftime("%Y.%m.%d"), time.strftime("%H:%M")
+        daytime = datetime.now()
+        day = daytime.strftime("%Y.%m.%d")
+        time = daytime.strftime("%H:%M")
+        daytime = {"date": day, "time": time}
+        return daytime
 
 
 class Timerecord:
