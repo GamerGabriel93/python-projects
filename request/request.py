@@ -1,5 +1,5 @@
-import requests
 import time
+import requests
 
 
 def RequestData():
@@ -33,4 +33,25 @@ def Checker():
             break
 
 
-Checker()
+def Another():
+    # post a payload on a url
+    url = 'https://www.gamestar.hu/hirek'
+    payload = {'some': 'data'}
+    r = requests.post(url, json=payload)
+    print(r.text)
+
+
+def Cookies():
+    # allow_redirects=False/True
+    r = requests.get('http://github.com/', timeout=0.1)
+    x = r.url
+    print(x)
+
+
+def SaveAWebpage():
+    # save a webpage into a html file
+    website = input('Type or paste a url:')
+    r = requests.get(website)
+    with open('last.html', 'w', encoding='UTF-8') as f:
+        f.write(r.text)
+        f.close()
