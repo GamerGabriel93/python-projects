@@ -13,3 +13,6 @@ def GetHolidays():
         with open('unnepek.xls', 'a', encoding='UTF-8') as f:
             f.write(str(item["date"]) + ": " + str(item["localName"]) + "\n")
     f.close()
+
+
+GetHolidays()

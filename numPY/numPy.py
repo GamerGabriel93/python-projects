@@ -1,4 +1,5 @@
 import numpy as np
+import random as ra
 
 
 def tutorial():
@@ -22,3 +23,17 @@ def different():
     print('A tömb elemei:', a)
     print('B tömb elemei:', b)
     print('C tömb elemei:', c)
+
+
+def RandomArray():
+    a = np.zeros(10, dtype=int)
+    print(a)
+    x = 0
+    while x < len(a):
+        for i in a:
+            a[i] = ra.randrange(1, 10)
+        x += 1
+    print(a)
+
+
+RandomArray()
