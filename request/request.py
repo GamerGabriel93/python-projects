@@ -55,3 +55,6 @@ def SaveAWebpage():
     with open('last.html', 'w', encoding='UTF-8') as f:
         f.write(r.text)
         f.close()
+
+
+SaveAWebpage()

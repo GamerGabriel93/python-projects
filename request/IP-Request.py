@@ -11,7 +11,7 @@ def IPLookup():
         f.write(response.text)
         f.close()
     python_obj = js.loads(response.text)
-    print('\nIP:', python_obj["ip"], '\nVáros:', python_obj["city"], '\nSzélesség:', python_obj["latitude"],
+    print('\nIP:', python_obj["ip"], '\nOrszág:', python_obj["country_name"], '\nVáros:', python_obj["city"], '\nSzélesség:', python_obj["latitude"],
           '\nHosszúság:', python_obj["longitude"])
 
 
